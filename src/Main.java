@@ -53,12 +53,10 @@ public class Main {
         String rutaTexto = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\lorem_ipsum";
         FileReader fileReaderTexto = new FileReader(rutaTexto);
         BufferedReader bufferedReaderTexto = new BufferedReader(fileReaderTexto);
-        String textoFinal = bufferedReaderTexto.readLine();
-        while (textoFinal != null) {
-
+        String textoFinal;
+        while ((textoFinal = bufferedReaderTexto.readLine()) != null) {
             System.out.println(textoFinal);
-
-            // Fata que muestre todo el texto y solo sale la primera línea./
         }
+        fileReaderTexto.close();
     }
 }
