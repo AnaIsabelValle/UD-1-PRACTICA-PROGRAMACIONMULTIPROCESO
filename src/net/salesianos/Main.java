@@ -1,13 +1,15 @@
-import net.salesianos.LanzadorDeProcesos;
+package net.salesianos;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
 
-        String rutaLorem = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\lorem_ipsum";
+    public static void main(String[] args) throws InterruptedException, IOException  {
+
+
+        String rutaLorem = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\lorem_ipsum.txt";
 
         LanzadorDeProcesos.iniciarContador(rutaLorem, "a", "salidaVocalA");
         LanzadorDeProcesos.iniciarContador(rutaLorem, "e", "salidaVocalE");
@@ -15,40 +17,64 @@ public class Main {
         LanzadorDeProcesos.iniciarContador(rutaLorem, "o", "salidaVocalO");
         LanzadorDeProcesos.iniciarContador(rutaLorem, "u", "salidaVocalU");
 
-        String rutaSalidaA = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas\\salidaVocalA";
-        FileReader fileReaderA = new FileReader(rutaSalidaA);
+
+        // Mejor una ruta común para luego añadirle lo que es diferente
+        String rutaDeSalida = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas";
+
+        // Fichero salidaVocalA
+
+        FileReader fileReaderA = new FileReader(rutaDeSalida + "\\salidaVocalA");
         BufferedReader bufferedReaderVocalA = new BufferedReader(fileReaderA);
+
         String numeroA = bufferedReaderVocalA.readLine();
+        bufferedReaderVocalA.close();
 
-        System.out.println(numeroA);
+        System.out.println("Cantidad de vocales A :" + numeroA);
 
-        String rutaSalidaE = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas\\salidaVocalE";
-        FileReader fileReaderE = new FileReader(rutaSalidaE);
+
+        // Fichero salidaVocalE
+
+        FileReader fileReaderE = new FileReader(rutaDeSalida + "\\salidaVocalE");
         BufferedReader bufferedReaderVocalE = new BufferedReader(fileReaderE);
+
         String numeroE = bufferedReaderVocalE.readLine();
+        bufferedReaderVocalE.close();
 
-        System.out.println(numeroE);
+        System.out.println("Cantidad de vocales E :" + numeroE);
 
-        String rutaSalidaI = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas\\salidaVocalI";
-        FileReader fileReaderI = new FileReader(rutaSalidaI);
+
+        // Fichero salidaVocalI
+
+        FileReader fileReaderI = new FileReader(rutaDeSalida + "\\salidaVocalI");
         BufferedReader bufferedReaderVocalI = new BufferedReader(fileReaderI);
+
         String numeroI = bufferedReaderVocalI.readLine();
+        bufferedReaderVocalI.close();
 
-        System.out.println(numeroI);
+        System.out.println("Cantidad de vocales I :" + numeroI);
 
-        String rutaSalidaO = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas\\salidaVocalO";
-        FileReader fileReaderO = new FileReader(rutaSalidaO);
+
+        // Fichero salidaVocalO
+
+        FileReader fileReaderO = new FileReader(rutaDeSalida + "\\salidaVocalO");
         BufferedReader bufferedReaderVocalO = new BufferedReader(fileReaderO);
+
         String numeroO = bufferedReaderVocalO.readLine();
+        bufferedReaderVocalO.close();
 
-        System.out.println(numeroO);
+        System.out.println("Cantidad de vocales O :" + numeroO);
 
-        String rutaSalidaU = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\net\\salesianos\\salidas\\salidaVocalA";
-        FileReader fileReaderU = new FileReader(rutaSalidaU);
+
+        // Fichero salidaVocalU
+
+        FileReader fileReaderU = new FileReader(rutaDeSalida + "\\salidaVocalU");
         BufferedReader bufferedReaderVocalU = new BufferedReader(fileReaderU);
-        String numeroU = bufferedReaderVocalU.readLine();
 
-        System.out.println(numeroU);
+        String numeroU = bufferedReaderVocalU.readLine();
+        bufferedReaderVocalU.close();
+
+        System.out.println("Cantidad de vocales U :" + numeroU);
+
 
         String rutaTexto = "C:\\Users\\ANA\\IdeaProjects\\UD-1-Practica-ProgramacionMultiproceso\\src\\lorem_ipsum";
         FileReader fileReaderTexto = new FileReader(rutaTexto);
