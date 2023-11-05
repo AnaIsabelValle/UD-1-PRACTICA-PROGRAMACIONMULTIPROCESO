@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Contador {
-
     public static void main(String[] args) throws IOException {
 
         char vocal = args[0].charAt(0);
